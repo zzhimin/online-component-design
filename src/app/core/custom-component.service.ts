@@ -72,7 +72,7 @@ export class CustomComponentService {
         mergeMap((resolvedModules: any) => {
           return this.dynamicComponentFactoryService.createDynamicComponentFactory(
             class DynamicWidgetComponentInstance extends DynamicWidgetComponent { },
-            widgetInfo.templateHtml,
+            widgetInfo.htmlTemplate,
             resolvedModules.modules
           ).pipe(
             map((factory) => {

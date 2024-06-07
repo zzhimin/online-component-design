@@ -1,8 +1,10 @@
 import { Component, OnInit, Input, ViewChild, ViewContainerRef, ElementRef, ComponentRef, ChangeDetectorRef, Injector, OnDestroy } from '@angular/core';
+// @ts-ignore
 import cssjs from '@app/core/css/css';
 import { CustomComponentService } from "@app/core/custom-component.service";
 import { Widget } from '@app/core/widget.model';
 import { WidgetContext } from './custom-widget.models';
+import { AnchorComponent } from '../anchor/anchor.component';
 
 @Component({
   selector: 'dynamic-component',
@@ -10,7 +12,7 @@ import { WidgetContext } from './custom-widget.models';
   styleUrls: ['./dynamic-component.component.less'],
 })
 export class DynamicComponentComponent implements OnInit, OnDestroy {
-  @ViewChild('widgetContainer', { read: ViewContainerRef, static: true }) widgetContentContainer: ViewContainerRef;
+  @ViewChild('customWidgetAnchor', { static: true }) customWidgetAnchor: AnchorComponent;
 
   @Input() 
   get widget() {
@@ -91,7 +93,8 @@ export class DynamicComponentComponent implements OnInit, OnDestroy {
   }
 
   private configureDynamicWidgetComponent() {
-    this.widgetContentContainer.clear();
+    const viewContainerRef = this.customWidgetAnchor.viewContainerRef;
+    viewContainerRef.clear();
     const injector: Injector = Injector.create(
       {
         providers: [
@@ -107,7 +110,8 @@ export class DynamicComponentComponent implements OnInit, OnDestroy {
     this.widgetContext.$containerParent = this.elementRef.nativeElement.querySelector('#custom-widget-container');
 
     try {
-      this.dynamicWidgetComponentRef = this.widgetContentContainer.createComponent(this.widgetInfo.componentFactory, 0, injector);
+      this.dynamicWidgetComponentRef = viewContainerRef.createComponent(this.widgetInfo.componentFactory, 0, injector);
+      // console.log("🚀 ~ this.dynamicWidgetComponentRef:", this.dynamicWidgetComponentRef)
       this.cd.detectChanges();
     } catch (e) {
       console.error(e);
@@ -115,7 +119,7 @@ export class DynamicComponentComponent implements OnInit, OnDestroy {
         this.dynamicWidgetComponentRef.destroy();
         this.dynamicWidgetComponentRef = null;
       }
-      this.widgetContentContainer.clear();
+      viewContainerRef.clear();
     }
 
     if (this.dynamicWidgetComponentRef) {
@@ -132,9 +136,9 @@ export class DynamicComponentComponent implements OnInit, OnDestroy {
 
   private parserCss() {
     const namespace = `${this.widgetInfo.widgetName}-${Math.random()}`;
-    const customCss = this.widgetInfo.templateCss;
+    const customCss = this.widgetInfo.cssTemplate;
     this.cssParser.cssPreviewNamespace = namespace;
-    // this.cssParser.createStyleElement(namespace, customCss, 'nonamespace');
+    this.cssParser.createStyleElement(namespace, customCss, 'nonamespace');
   }
 
 
