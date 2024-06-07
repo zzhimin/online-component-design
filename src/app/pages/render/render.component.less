@@ -1,0 +1,28 @@
+:host ::ng-deep {
+  nz-header {
+    height: 65px;
+  }
+  nz-content {
+    display: flex;
+    height: calc(100vh - 65px);
+    background: #fff;
+    
+    .card-box {
+      width: 200px;
+      height: 150px;
+      margin: 5px;
+      transition: box-shadow .5s;
+      &:hover {
+        box-shadow: 0 8px 8px rgba(10, 16, 20, 0.24), 0 0 8px rgba(10, 16, 20, 0.12);
+      }
+    }
+  }
+
+  .ant-tabs-nav {
+    width: 150px;
+  }
+
+  .ant-tabs-content-holder {
+    padding: 15px;
+  }
+}

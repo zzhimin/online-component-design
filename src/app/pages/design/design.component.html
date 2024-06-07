@@ -1,0 +1,65 @@
+<nz-layout>
+  <nz-header style="display: flex;align-items: center;justify-content: space-between;">
+    <div style="color: #fff;font-size: 24px;">组件在线设计</div>
+    <div class="operation" style="float: right;">
+      <button nz-button nzType="primary" style="margin-right: 10px;" (click)="save()">保存</button>
+      <button nz-button nzType="default" (click)="preview()">预览</button>
+      <a nz-button nzType="link" [routerLink]="['/render']">返回</a>
+    </div>
+  </nz-header>
+  <nz-content>
+    <div
+      nz-resizable
+      class="resizable-box"
+      [style.width.px]="contentWidth"
+      (nzResize)="onContentResize($event)"
+    >
+      <nz-resize-handle nzDirection="right">
+        <div class="right-wrap">
+          <span class="right" nz-icon nzType="more" nzTheme="outline"></span>
+        </div>
+      </nz-resize-handle>
+      
+      <div 
+        class="top-box"
+        nz-resizable
+        [style.height.px]="contentLeftHeight"
+        (nzResize)="onContentLeftResize($event)"
+      >
+        <nz-resize-handle nzDirection="bottom">
+          <div class="middle-line">
+            <span class="middle-icon"  nz-icon nzType="dash" nzTheme="outline"></span>
+          </div>
+        </nz-resize-handle>
+          <code-editor #htmlEditor mode="html" [content]="widget.htmlTemplate"></code-editor>
+      </div>
+      <div class="bottom-box">
+        <code-editor #javascriptEditor mode="javascript" [content]="widget.javascriptTemplate"></code-editor>
+      </div>
+    </div>
+    
+    <div
+      nz-resizable
+      class="right-box"
+    >
+
+      <div 
+        class="top-box"
+        nz-resizable
+        [style.height.px]="contentRightHeight"
+        (nzResize)="onContentRightResize($event)"
+      >
+        <nz-resize-handle nzDirection="bottom">
+          <div class="middle-line">
+            <span class="middle-icon"  nz-icon nzType="dash" nzTheme="outline"></span>
+          </div>
+        </nz-resize-handle>
+        <code-editor #cssEditor mode="css" [content]="widget.cssTemplate"></code-editor>
+      </div>
+      <div class="bottom-box">
+        <code-editor #jsonEditor mode="json" [content]="widget.settings"></code-editor>
+      </div>
+
+    </div>
+  </nz-content>
+</nz-layout>
