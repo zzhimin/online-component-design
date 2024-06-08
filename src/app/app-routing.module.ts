@@ -1,12 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { OnlineRenderComponent } from './pages/render/render.component';
+import { OnlineDesignComponent } from './pages/design/design.component';
 import { AppComponent } from './app.component';
 
 const routes: Routes = [
   { 
     path: '',
     component: AppComponent,
-    loadChildren: () => import('./pages/pages.module').then(m => m.OnlineComponentDesignPagesModule)
+  },
+  { 
+    path: 'render',
+    component: OnlineRenderComponent,
+  },
+  { 
+    path: 'design',
+    component: OnlineDesignComponent,
   },
   {
     path: '**',

@@ -19,10 +19,10 @@ const components: any = [
   providers: [
     DatePipe,
   ],
-  declarations: components,
+  declarations: [...components],
   imports: [
     CommonModule,
   ],
-  exports: components,
+  exports: [...components],
 })
 export class ComponentsModule {}
