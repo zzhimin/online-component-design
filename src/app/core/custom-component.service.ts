@@ -37,6 +37,7 @@ export class CustomComponentService {
       widgetNamespace,
       [
         ComponentsModule,
+        NgZorroAntdModule,
         // ...    // module里可以注入任何需要的服务，指令，组件等
       ]
     ).subscribe(() => {
