@@ -6,10 +6,13 @@ import { CodeEditorComponent } from "./code-editor/code-editor.component";
 
 import { DynamicComponentComponent } from "./dynamic-component/dynamic-component.component";
 
+import { CompTempComponent } from "./comp-temp/comp-temp.component";
+
 const components: any = [
   AnchorComponent,
   CodeEditorComponent,
   DynamicComponentComponent,
+  CompTempComponent,
 ];
 
 @NgModule({

@@ -11,7 +11,13 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 export class WidgetContext {
   dashboardWidget: any;
 
-  constructor(private widget: any) {}
+  constructor(private widget: any) {
+    const settings = widget.settings;
+    if (settings) {
+      this.settings = JSON.parse(settings);
+    }
+  }
+  settings: any;
   date: DatePipe;
   http: HttpClient;
   sanitizer: DomSanitizer;

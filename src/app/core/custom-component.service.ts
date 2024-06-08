@@ -5,6 +5,7 @@ import { Widget } from './widget.model';
 import { ComponentsModule } from '@app/components/components.module';
 import { DynamicWidgetComponent } from '@app/core/dynamic-widget.component';
 import { DynamicComponentFactoryService } from './dynamic-component-factory.service';
+import { NgZorroAntdModule } from '@app/components/ngZorroAntd.module';
 
 @Injectable({
   providedIn: 'root'

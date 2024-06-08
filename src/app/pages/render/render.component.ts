@@ -29,8 +29,8 @@ export class OnlineRenderComponent implements OnInit {
     if (widgets) this.widgets = widgets;
   }
   getName(widget: Widget) {
-    const settings = JSON.parse(widget.settings) as Settings;
-    return settings.name;
+    const settings = JSON.parse(widget.settings || '{}') as Settings;
+    return settings?.name;
   }
 
   setting(widget: Widget) {

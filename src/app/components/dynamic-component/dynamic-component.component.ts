@@ -80,7 +80,7 @@ export class DynamicComponentComponent implements OnInit, OnDestroy {
         this.widgetTypeInstance = {};
       }
     }
-    console.log('this.widgetTypeInstance >>:', this.widgetTypeInstance);
+    // console.log('this.widgetTypeInstance >>:', this.widgetTypeInstance);
     if (!this.widgetTypeInstance.onInit) {
       this.widgetTypeInstance.onInit = () => { };
     }
