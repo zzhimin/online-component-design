@@ -45,18 +45,17 @@ export class OnlineRenderComponent implements OnInit {
   }
 
   preview(widget: Widget) {
-    this.widget = widget;
+    this.widget = JSON.parse(JSON.stringify(widget));
     this.isVisible2 = true;
   }
 
   handleOk(): void {
     this.isVisible = false;
-    this.widget = {
+    const widget = {
       ...this.widget,
       settings: this.jsonEditor.inputValue as any
     }
-    this.widgetService.saveWidget(this.widget);
-    const widgets = this.widgetService.getAll();
+    const widgets = this.widgetService.saveWidget(widget);
     if (widgets) this.widgets = widgets;
     this.message.success('修改成功');
   }

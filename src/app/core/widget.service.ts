@@ -31,6 +31,8 @@ export class WidgetService {
       localStorage.setItem('widgets', JSON.stringify([widget]))
     }
 
+    return this.getAll();
+
   }
 
   getWidget(id: number | string) {
