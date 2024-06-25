@@ -1,0 +1,1 @@
+ <nz-time-picker [(ngModel)]="time" (ngModelChange)="log($event)"></nz-time-picker> 

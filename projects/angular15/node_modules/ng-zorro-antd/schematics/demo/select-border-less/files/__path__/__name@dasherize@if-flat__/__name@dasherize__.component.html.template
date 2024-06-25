@@ -1,0 +1,10 @@
+
+    <nz-select ngModel="lucy" nzBorderless>
+      <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
+      <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
+      <nz-option nzValue="disabled" nzLabel="Disabled" nzDisabled></nz-option>
+    </nz-select>
+    <nz-select ngModel="lucy" nzDisabled nzBorderless>
+      <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
+    </nz-select>
+  

@@ -1,0 +1,6 @@
+
+    <nz-space nzDirection="vertical">
+      <nz-time-picker *nzSpaceItem nzStatus="error"></nz-time-picker>
+      <nz-time-picker *nzSpaceItem nzStatus="warning">></nz-time-picker>
+    </nz-space>
+  

@@ -1,0 +1,13 @@
+
+    <button
+      nz-popconfirm
+      nzPopconfirmTitle="Title"
+      [nzBeforeConfirm]="beforeConfirm"
+      (nzOnConfirm)="confirm()"
+      (nzOnCancel)="cancel()"
+      nz-button
+      nzType="primary"
+    >
+      Open Popconfirm with Promise
+    </button>
+  

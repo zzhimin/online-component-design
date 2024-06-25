@@ -1,0 +1,34 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: '<%= selector %>',
+  <% if(inlineTemplate) { %>template: `
+    <nz-input-number [(ngModel)]="toFixedValue" [nzPrecision]="precision" nzPlaceHolder="toFixed"></nz-input-number>
+    <nz-input-number
+      [(ngModel)]="cutValue"
+      [nzPrecision]="precision"
+      nzPrecisionMode="cut"
+      nzPlaceHolder="cut off"
+    ></nz-input-number>
+    <nz-input-number
+      [(ngModel)]="customFnValue"
+      [nzPrecision]="precision"
+      [nzPrecisionMode]="customPrecisionFn"
+      nzPlaceHolder="cut off"
+    ></nz-input-number>
+  `<% } else { %>templateUrl: './<%= dasherize(name) %>.component.html'<% } %>,
+  <% if(inlineStyle) { %>styles: [`
+      nz-input-number {
+        margin-right: 8px;
+      }
+    `]<% } else { %>styleUrls: ['./<%= dasherize(name) %>.component.<%= style %>']<% } %>
+})
+export class <%= classify(name) %>Component {
+  toFixedValue = 2;
+  cutValue = 2;
+  customFnValue = 2;
+  precision = 2;
+  customPrecisionFn(value: string | number, precision?: number): number {
+    return +Number(value).toFixed(precision! + 1);
+  }
+}

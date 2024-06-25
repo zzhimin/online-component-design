@@ -1,0 +1,7 @@
+
+    <nz-badge nzDot><span nz-icon nzType="notification"></span></nz-badge>
+    <nz-badge nzDot [nzShowDot]="false"><span nz-icon nzType="notification"></span></nz-badge>
+    <nz-badge nzDot>
+      <a>Link something</a>
+    </nz-badge>
+  

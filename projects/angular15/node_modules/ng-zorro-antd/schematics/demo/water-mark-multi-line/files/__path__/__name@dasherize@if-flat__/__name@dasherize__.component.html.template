@@ -1,0 +1,5 @@
+
+    <nz-water-mark [nzContent]="['Angular', 'NG Ant Design']">
+      <div style="height: 500px"></div>
+    </nz-water-mark>
+  

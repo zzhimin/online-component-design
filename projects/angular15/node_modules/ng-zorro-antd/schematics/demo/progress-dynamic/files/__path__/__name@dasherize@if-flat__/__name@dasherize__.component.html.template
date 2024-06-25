@@ -1,0 +1,7 @@
+
+    <nz-progress [nzPercent]="percent"></nz-progress>
+    <nz-button-group>
+      <button nz-button (click)="decline()"><span nz-icon nzType="minus"></span></button>
+      <button nz-button (click)="increase()"><span nz-icon nzType="plus"></span></button>
+    </nz-button-group>
+  

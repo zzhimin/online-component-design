@@ -1,0 +1,34 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: '<%= selector %>',
+  <% if(inlineTemplate) { %>template: `
+    <nz-select
+      [nzMaxTagCount]="3"
+      [nzMaxTagPlaceholder]="tagPlaceHolder"
+      nzMode="multiple"
+      nzPlaceHolder="Please select"
+      [(ngModel)]="listOfSelectedValue"
+    >
+      <nz-option *ngFor="let item of listOfOption" [nzLabel]="item" [nzValue]="item"></nz-option>
+    </nz-select>
+    <ng-template #tagPlaceHolder let-selectedList>and {{ selectedList.length }} more selected</ng-template>
+  `<% } else { %>templateUrl: './<%= dasherize(name) %>.component.html'<% } %>,
+  <% if(inlineStyle) { %>styles: [`
+      nz-select {
+        width: 100%;
+      }
+    `]<% } else { %>styleUrls: ['./<%= dasherize(name) %>.component.<%= style %>']<% } %>
+})
+export class <%= classify(name) %>Component implements OnInit {
+  listOfOption: string[] = [];
+  listOfSelectedValue = ['a10', 'c12'];
+
+  ngOnInit(): void {
+    const children: string[] = [];
+    for (let i = 10; i < 36; i++) {
+      children.push(`${i.toString(36)}${i}`);
+    }
+    this.listOfOption = children;
+  }
+}

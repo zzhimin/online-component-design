@@ -6,6 +6,7 @@
 /out-tsc
 /bazel-out
 .angular/
+/project/angular15/.angular
 
 # Node
 /node_modules

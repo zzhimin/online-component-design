@@ -1,0 +1,28 @@
+
+    <button nz-button (click)="createBasicNotification('top')" nzType="primary">
+      <span nz-icon nzType="border-top" nzTheme="outline"></span>
+      top
+    </button>
+    <button nz-button (click)="createBasicNotification('bottom')" nzType="primary">
+      <span nz-icon nzType="border-bottom" nzTheme="outline"></span>
+      bottom
+    </button>
+    <nz-divider></nz-divider>
+    <button nz-button (click)="createBasicNotification('topLeft')" nzType="primary">
+      <span nz-icon nzType="radius-upleft"></span>
+      topLeft
+    </button>
+    <button nz-button (click)="createBasicNotification('topRight')" nzType="primary">
+      <span nz-icon nzType="radius-upright"></span>
+      topRight
+    </button>
+    <nz-divider></nz-divider>
+    <button nz-button (click)="createBasicNotification('bottomLeft')" nzType="primary">
+      <span nz-icon nzType="radius-bottomleft"></span>
+      bottomLeft
+    </button>
+    <button nz-button (click)="createBasicNotification('bottomRight')" nzType="primary">
+      <span nz-icon nzType="radius-bottomright"></span>
+      bottomRight
+    </button>
+  

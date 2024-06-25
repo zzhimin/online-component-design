@@ -1,0 +1,18 @@
+
+    <div>
+      <nz-badge [nzCount]="count">
+        <a class="head-example"></a>
+      </nz-badge>
+      <nz-button-group>
+        <button nz-button (click)="minCount()"><span nz-icon nzType="minus"></span></button>
+        <button nz-button (click)="addCount()"><span nz-icon nzType="plus"></span></button>
+      </nz-button-group>
+    </div>
+    <br />
+    <div>
+      <nz-badge [nzDot]="dot">
+        <a class="head-example"></a>
+      </nz-badge>
+      <nz-switch [(ngModel)]="dot"></nz-switch>
+    </div>
+  

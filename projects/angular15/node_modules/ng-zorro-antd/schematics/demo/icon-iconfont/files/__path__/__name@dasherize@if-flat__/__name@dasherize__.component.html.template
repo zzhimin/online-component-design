@@ -1,0 +1,7 @@
+
+    <div class="icons-list">
+      <span nz-icon [nzIconfont]="'icon-tuichu'"></span>
+      <span nz-icon [nzIconfont]="'icon-facebook'"></span>
+      <span nz-icon [nzIconfont]="'icon-twitter'"></span>
+    </div>
+  

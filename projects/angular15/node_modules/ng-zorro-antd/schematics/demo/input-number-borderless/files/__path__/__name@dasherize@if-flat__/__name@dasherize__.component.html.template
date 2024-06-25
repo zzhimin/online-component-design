@@ -1,0 +1,1 @@
+ <nz-input-number nzBorderless [(ngModel)]="demoValue"></nz-input-number> 

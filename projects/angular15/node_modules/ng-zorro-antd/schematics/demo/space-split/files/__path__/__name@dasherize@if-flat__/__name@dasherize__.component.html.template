@@ -1,0 +1,11 @@
+
+    <nz-space [nzSplit]="spaceSplit">
+      <ng-template #spaceSplit>
+        <nz-divider nzType="vertical"></nz-divider>
+      </ng-template>
+
+      <a *nzSpaceItem nz-typography>Link</a>
+      <a *nzSpaceItem nz-typography>Link</a>
+      <a *nzSpaceItem nz-typography>Link</a>
+    </nz-space>
+  

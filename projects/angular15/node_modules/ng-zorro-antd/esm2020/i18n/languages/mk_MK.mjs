@@ -1,0 +1,140 @@
+/**
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://github.com/NG-ZORRO/ng-zorro-antd/blob/master/LICENSE
+ */
+export default {
+    locale: 'mk',
+    Pagination: {
+        items_per_page: '/ стр',
+        jump_to: 'Оди на',
+        jump_to_confirm: 'потврди',
+        page: '',
+        prev_page: 'Претходна страница',
+        next_page: 'Наредна страница',
+        prev_5: 'Претходни 5 страници',
+        next_5: 'Наредни 5 страници',
+        prev_3: 'Претходни 3 страници',
+        next_3: 'Наредни 3 страници',
+        page_size: 'Page Size'
+    },
+    DatePicker: {
+        lang: {
+            placeholder: 'Избери датум',
+            rangePlaceholder: ['Од датум', 'До датум'],
+            locale: 'mk_MK',
+            today: 'Денес',
+            now: 'Сега',
+            backToToday: 'Назад до денес',
+            ok: 'ОК',
+            clear: 'Избриши',
+            month: 'Месец',
+            year: 'Година',
+            timeSelect: 'Избери време',
+            dateSelect: 'Избери датум',
+            monthSelect: 'Избери месец',
+            yearSelect: 'Избери година',
+            decadeSelect: 'Избери деценија',
+            yearFormat: 'YYYY',
+            dateFormat: 'D.M.YYYY',
+            dayFormat: 'D',
+            dateTimeFormat: 'D.M.YYYY HH:mm:ss',
+            monthBeforeYear: true,
+            previousMonth: 'Претходен месец (PageUp)',
+            nextMonth: 'Нареден месец (PageDown)',
+            previousYear: 'Претходна година (Control + left)',
+            nextYear: 'Наредна година (Control + right)',
+            previousDecade: 'Претходна деценија',
+            nextDecade: 'Наредна деценија',
+            previousCentury: 'Претходен век',
+            nextCentury: 'Нареден век'
+        },
+        timePickerLocale: {
+            placeholder: 'Избери време'
+        }
+    },
+    TimePicker: {
+        placeholder: 'Избери време'
+    },
+    Calendar: {
+        lang: {
+            placeholder: 'Избери датум',
+            rangePlaceholder: ['Од датум', 'До датум'],
+            locale: 'mk_MK',
+            today: 'Денес',
+            now: 'Сега',
+            backToToday: 'Назад до денес',
+            ok: 'ОК',
+            clear: 'Избриши',
+            month: 'Месец',
+            year: 'Година',
+            timeSelect: 'Избери време',
+            dateSelect: 'Избери датум',
+            monthSelect: 'Избери месец',
+            yearSelect: 'Избери година',
+            decadeSelect: 'Избери деценија',
+            yearFormat: 'YYYY',
+            dateFormat: 'D.M.YYYY',
+            dayFormat: 'D',
+            dateTimeFormat: 'D.M.YYYY HH:mm:ss',
+            monthBeforeYear: true,
+            previousMonth: 'Претходен месец (PageUp)',
+            nextMonth: 'Нареден месец (PageDown)',
+            previousYear: 'Претходна година (Control + left)',
+            nextYear: 'Наредна година (Control + right)',
+            previousDecade: 'Претходна деценија',
+            nextDecade: 'Наредна деценија',
+            previousCentury: 'Претходен век',
+            nextCentury: 'Нареден век'
+        },
+        timePickerLocale: {
+            placeholder: 'Избери време'
+        }
+    },
+    global: {
+        placeholder: 'Ве молиме означете'
+    },
+    Table: {
+        filterTitle: 'Мени за филтрирање',
+        filterConfirm: 'ОК',
+        filterReset: 'Избриши',
+        selectAll: 'Одбери страница',
+        selectInvert: 'Инвертирај страница'
+    },
+    Modal: {
+        okText: 'ОК',
+        cancelText: 'Откажи',
+        justOkText: 'ОК'
+    },
+    Popconfirm: {
+        okText: 'ОК',
+        cancelText: 'Откажи'
+    },
+    Transfer: {
+        searchPlaceholder: 'Пребарај тука',
+        itemUnit: 'предмет',
+        itemsUnit: 'предмети'
+    },
+    Upload: {
+        uploading: 'Се прикачува...',
+        removeFile: 'Избриши фајл',
+        uploadError: 'Грешка при прикачување',
+        previewFile: 'Прикажи фајл',
+        downloadFile: 'Преземи фајл'
+    },
+    Empty: {
+        description: 'Нема податоци'
+    },
+    Icon: {
+        icon: 'Икона'
+    },
+    Text: {
+        edit: 'Уреди',
+        copy: 'Копирај',
+        copied: 'Копирано',
+        expand: 'Зголеми'
+    },
+    PageHeader: {
+        back: 'Назад'
+    }
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWtfTUsuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi9jb21wb25lbnRzL2kxOG4vbGFuZ3VhZ2VzL21rX01LLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOzs7R0FHRztBQUVILGVBQWU7SUFDYixNQUFNLEVBQUUsSUFBSTtJQUNaLFVBQVUsRUFBRTtRQUNWLGNBQWMsRUFBRSxPQUFPO1FBQ3ZCLE9BQU8sRUFBRSxRQUFRO1FBQ2pCLGVBQWUsRUFBRSxTQUFTO1FBQzFCLElBQUksRUFBRSxFQUFFO1FBQ1IsU0FBUyxFQUFFLG9CQUFvQjtRQUMvQixTQUFTLEVBQUUsa0JBQWtCO1FBQzdCLE1BQU0sRUFBRSxzQkFBc0I7UUFDOUIsTUFBTSxFQUFFLG9CQUFvQjtRQUM1QixNQUFNLEVBQUUsc0JBQXNCO1FBQzlCLE1BQU0sRUFBRSxvQkFBb0I7UUFDNUIsU0FBUyxFQUFFLFdBQVc7S0FDdkI7SUFDRCxVQUFVLEVBQUU7UUFDVixJQUFJLEVBQUU7WUFDSixXQUFXLEVBQUUsY0FBYztZQUMzQixnQkFBZ0IsRUFBRSxDQUFDLFVBQVUsRUFBRSxVQUFVLENBQUM7WUFDMUMsTUFBTSxFQUFFLE9BQU87WUFDZixLQUFLLEVBQUUsT0FBTztZQUNkLEdBQUcsRUFBRSxNQUFNO1lBQ1gsV0FBVyxFQUFFLGdCQUFnQjtZQUM3QixFQUFFLEVBQUUsSUFBSTtZQUNSLEtBQUssRUFBRSxTQUFTO1lBQ2hCLEtBQUssRUFBRSxPQUFPO1lBQ2QsSUFBSSxFQUFFLFFBQVE7WUFDZCxVQUFVLEVBQUUsY0FBYztZQUMxQixVQUFVLEVBQUUsY0FBYztZQUMxQixXQUFXLEVBQUUsY0FBYztZQUMzQixVQUFVLEVBQUUsZUFBZTtZQUMzQixZQUFZLEVBQUUsaUJBQWlCO1lBQy9CLFVBQVUsRUFBRSxNQUFNO1lBQ2xCLFVBQVUsRUFBRSxVQUFVO1lBQ3RCLFNBQVMsRUFBRSxHQUFHO1lBQ2QsY0FBYyxFQUFFLG1CQUFtQjtZQUNuQyxlQUFlLEVBQUUs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ZSBpcyBnb3Zlcm5lZCBieSBhbiBNSVQtc3R5bGUgbGljZW5zZSB0aGF0IGNhbiBiZVxuICogZm91bmQgaW4gdGhlIExJQ0VOU0UgZmlsZSBhdCBodHRwczovL2dpdGh1Yi5jb20vTkctWk9SUk8vbmctem9ycm8tYW50ZC9ibG9iL21hc3Rlci9MSUNFTlNFXG4gKi9cblxuZXhwb3J0IGRlZmF1bHQge1xuICBsb2NhbGU6ICdtaycsXG4gIFBhZ2luYXRpb246IHtcbiAgICBpdGVtc19wZXJfcGFnZTogJy8g0YHRgtGAJyxcbiAgICBqdW1wX3RvOiAn0J7QtNC4INC90LAnLFxuICAgIGp1bXBfdG9fY29uZmlybTogJ9C/0L7RgtCy0YDQtNC4JyxcbiAgICBwYWdlOiAnJyxcbiAgICBwcmV2X3BhZ2U6ICfQn9GA0LXRgtGF0L7QtNC90LAg0YHRgtGA0LDQvdC40YbQsCcsXG4gICAgbmV4dF9wYWdlOiAn0J3QsNGA0LXQtNC90LAg0YHRgtGA0LDQvdC40YbQsCcsXG4gICAgcHJldl81OiAn0J/RgNC10YLRhdC+0LTQvdC4IDUg0YHRgtGA0LDQvdC40YbQuCcsXG4gICAgbmV4dF81OiAn0J3QsNGA0LXQtNC90LggNSDRgdGC0YDQsNC90LjRhtC4JyxcbiAgICBwcmV2XzM6ICfQn9GA0LXRgtGF0L7QtNC90LggMyDRgdGC0YDQsNC90LjRhtC4JyxcbiAgICBuZXh0XzM6ICfQndCw0YDQtdC00L3QuCAzINGB0YLRgNCw0L3QuNGG0LgnLFxuICAgIHBhZ2Vfc2l6ZTogJ1BhZ2UgU2l6ZSdcbiAgfSxcbiAgRGF0ZVBpY2tlcjoge1xuICAgIGxhbmc6IHtcbiAgICAgIHBsYWNlaG9sZGVyOiAn0JjQt9Cx0LXRgNC4INC00LDRgtGD0LwnLFxuICAgICAgcmFuZ2VQbGFjZWhvbGRlcjogWyfQntC0INC00LDRgtGD0LwnLCAn0JTQviDQtNCw0YLRg9C8J10sXG4gICAgICBsb2NhbGU6ICdta19NSycsXG4gICAgICB0b2RheTogJ9CU0LXQvdC10YEnLFxuICAgICAgbm93OiAn0KHQtdCz0LAnLFxuICAgICAgYmFja1RvVG9kYXk6ICfQndCw0LfQsNC0INC00L4g0LTQtdC90LXRgScsXG4gICAgICBvazogJ9Ce0JonLFxuICAgICAgY2xlYXI6ICfQmNC30LHRgNC40YjQuCcsXG4gICAgICBtb250aDogJ9Cc0LXRgdC10YYnLFxuICAgICAgeWVhcjogJ9CT0L7QtNC40L3QsCcsXG4gICAgICB0aW1lU2VsZWN0OiAn0JjQt9Cx0LXRgNC4INCy0YDQtdC80LUnLFxuICAgICAgZGF0ZVNlbGVjdDogJ9CY0LfQsdC10YDQuCDQtNCw0YLRg9C8JyxcbiAgICAgIG1vbnRoU2VsZWN0OiAn0JjQt9Cx0LXRgNC4INC80LXRgdC10YYnLFxuICAgICAgeWVhclNlbGVjdDogJ9CY0LfQsdC10YDQuCDQs9C+0LTQuNC90LAnLFxuICAgICAgZGVjYWRlU2VsZWN0OiAn0JjQt9Cx0LXRgNC4INC00LXRhtC10L3QuNGY0LAnLFxuICAgICAgeWVhckZvcm1hdDogJ1lZWVknLFxuICAgICAgZGF0ZUZvcm1hdDogJ0QuTS5ZWVlZJyxcbiAgICAgIGRheUZvcm1hdDogJ0QnLFxuICAgICAgZGF0ZVRpbWVGb3JtYXQ6ICdELk0uWVlZWSBISDptbTpzcycsXG4gICAgICBtb250aEJlZm9yZVllYXI6IHRydWUsXG4gICAgICBwcmV2aW91c01vbnRoOiAn0J/RgNC10YLRhdC+0LTQtdC9INC80LXRgdC10YYgKFBhZ2VVcCknLFxuICAgICAgbmV4dE1vbnRoOiAn0J3QsNGA0LXQtNC10L0g0LzQtdGB0LXRhiAoUGFnZURvd24pJyxcbiAgICAgIHByZXZpb3VzWWVhcjogJ9Cf0YDQtdGC0YXQvtC00L3QsCDQs9C+0LTQuNC90LAgKENvbnRyb2wgKyBsZWZ0KScsXG4gICAgICBuZXh0WWVhcjogJ9Cd0LDRgNC10LTQvdCwINCz0L7QtNC40L3QsCAoQ29udHJvbCArIHJpZ2h0KScsXG4gICAgICBwcmV2aW91c0RlY2FkZTogJ9Cf0YDQtdGC0YXQvtC00L3QsCDQtNC10YbQtdC90LjRmNCwJyxcbiAgICAgIG5leHREZWNhZGU6ICfQndCw0YDQtdC00L3QsCDQtNC10YbQtdC90LjRmNCwJyxcbiAgICAgIHByZXZpb3VzQ2VudHVyeTogJ9Cf0YDQtdGC0YXQvtC00LXQvSDQstC10LonLFxuICAgICAgbmV4dENlbnR1cnk6ICfQndCw0YDQtdC00LXQvSDQstC10LonXG4gICAgfSxcbiAgICB0aW1lUGlja2VyTG9jYWxlOiB7XG4gICAgICBwbGFjZWhvbGRlcjogJ9CY0LfQsdC10YDQuCDQstGA0LXQvNC1J1xuICAgIH1cbiAgfSxcbiAgVGltZVBpY2tlcjoge1xuICAgIHBsYWNlaG9sZGVyOiAn0JjQt9Cx0LXRgNC4INCy0YDQtdC80LUnXG4gIH0sXG4gIENhbGVuZGFyOiB7XG4gICAgbGFuZzoge1xuICAgICAgcGxhY2Vob2xkZXI6ICfQmNC30LHQtdGA0Lgg0LTQsNGC0YPQvCcsXG4gICAgICByYW5nZVBsYWNlaG9sZGVyOiBbJ9Ce0LQg0LTQsNGC0YPQvCcsICfQlNC+INC00LDRgtGD0LwnXSxcbiAgICAgIGxvY2FsZTogJ21rX01LJyxcbiAgICAgIHRvZGF5OiAn0JTQtdC90LXRgScsXG4gICAgICBub3c6ICfQodC10LPQsCcsXG4gICAgICBiYWNrVG9Ub2RheTogJ9Cd0LDQt9Cw0LQg0LTQviDQtNC10L3QtdGBJyxcbiAgICAgIG9rOiAn0J7QmicsXG4gICAgICBjbGVhcjogJ9CY0LfQsdGA0LjRiNC4JyxcbiAgICAgIG1vbnRoOiAn0JzQtdGB0LXRhicsXG4gICAgICB5ZWFyOiAn0JPQvtC00LjQvdCwJyxcbiAgICAgIHRpbWVTZWxlY3Q6ICfQmNC30LHQtdGA0Lgg0LLRgNC10LzQtScsXG4gICAgICBkYXRlU2VsZWN0OiAn0JjQt9Cx0LXRgNC4INC00LDRgtGD0LwnLFxuICAgICAgbW9udGhTZWxlY3Q6ICfQmNC30LHQtdGA0Lgg0LzQtdGB0LXRhicsXG4gICAgICB5ZWFyU2VsZWN0OiAn0JjQt9Cx0LXRgNC4INCz0L7QtNC40L3QsCcsXG4gICAgICBkZWNhZGVTZWxlY3Q6ICfQmNC30LHQtdGA0Lgg0LTQtdGG0LXQvdC40ZjQsCcsXG4gICAgICB5ZWFyRm9ybWF0OiAnWVlZWScsXG4gICAgICBkYXRlRm9ybWF0OiAnRC5NLllZWVknLFxuICAgICAgZGF5Rm9ybWF0OiAnRCcsXG4gICAgICBkYXRlVGltZUZvcm1hdDogJ0QuTS5ZWVlZIEhIOm1tOnNzJyxcbiAgICAgIG1vbnRoQmVmb3JlWWVhcjogdHJ1ZSxcbiAgICAgIHByZXZpb3VzTW9udGg6ICfQn9GA0LXRgtGF0L7QtNC10L0g0LzQtdGB0LXRhiAoUGFnZVVwKScsXG4gICAgICBuZXh0TW9udGg6ICfQndCw0YDQtdC00LXQvSDQvNC10YHQtdGGIChQYWdlRG93biknLFxuICAgICAgcHJldmlvdXNZZWFyOiAn0J/RgNC10YLRhdC+0LTQvdCwINCz0L7QtNC40L3QsCAoQ29udHJvbCArIGxlZnQpJyxcbiAgICAgIG5leHRZZWFyOiAn0J3QsNGA0LXQtNC90LAg0LPQvtC00LjQvdCwIChDb250cm9sICsgcmlnaHQpJyxcbiAgICAgIHByZXZpb3VzRGVjYWRlOiAn0J/RgNC10YLRhdC+0LTQvdCwINC00LXRhtC10L3QuNGY0LAnLFxuICAgICAgbmV4dERlY2FkZTogJ9Cd0LDRgNC10LTQvdCwINC00LXRhtC10L3QuNGY0LAnLFxuICAgICAgcHJldmlvdXNDZW50dXJ5OiAn0J/RgNC10YLRhdC+0LTQtdC9INCy0LXQuicsXG4gICAgICBuZXh0Q2VudHVyeTogJ9Cd0LDRgNC10LTQtdC9INCy0LXQuidcbiAgICB9LFxuICAgIHRpbWVQaWNrZXJMb2NhbGU6IHtcbiAgICAgIHBsYWNlaG9sZGVyOiAn0JjQt9Cx0LXRgNC4INCy0YDQtdC80LUnXG4gICAgfVxuICB9LFxuICBnbG9iYWw6IHtcbiAgICBwbGFjZWhvbGRlcjogJ9CS0LUg0LzQvtC70LjQvNC1INC+0LfQvdCw0YfQtdGC0LUnXG4gIH0sXG4gIFRhYmxlOiB7XG4gICAgZmlsdGVyVGl0bGU6ICfQnNC10L3QuCDQt9CwINGE0LjQu9GC0YDQuNGA0LDRmtC1JyxcbiAgICBmaWx0ZXJDb25maXJtOiAn0J7QmicsXG4gICAgZmlsdGVyUmVzZXQ6ICfQmNC30LHRgNC40YjQuCcsXG4gICAgc2VsZWN0QWxsOiAn0J7QtNCx0LXRgNC4INGB0YLRgNCw0L3QuNGG0LAnLFxuICAgIHNlbGVjdEludmVydDogJ9CY0L3QstC10YDRgtC40YDQsNGYINGB0YLRgNCw0L3QuNGG0LAnXG4gIH0sXG4gIE1vZGFsOiB7XG4gICAgb2tUZXh0OiAn0J7QmicsXG4gICAgY2FuY2VsVGV4dDogJ9Ce0YLQutCw0LbQuCcsXG4gICAganVzdE9rVGV4dDogJ9Ce0JonXG4gIH0sXG4gIFBvcGNvbmZpcm06IHtcbiAgICBva1RleHQ6ICfQntCaJyxcbiAgICBjYW5jZWxUZXh0OiAn0J7RgtC60LDQttC4J1xuICB9LFxuICBUcmFuc2Zlcjoge1xuICAgIHNlYXJjaFBsYWNlaG9sZGVyOiAn0J/RgNC10LHQsNGA0LDRmCDRgtGD0LrQsCcsXG4gICAgaXRlbVVuaXQ6ICfQv9GA0LXQtNC80LXRgicsXG4gICAgaXRlbXNVbml0OiAn0L/RgNC10LTQvNC10YLQuCdcbiAgfSxcbiAgVXBsb2FkOiB7XG4gICAgdXBsb2FkaW5nOiAn0KHQtSDQv9GA0LjQutCw0YfRg9Cy0LAuLi4nLFxuICAgIHJlbW92ZUZpbGU6ICfQmNC30LHRgNC40YjQuCDRhNCw0ZjQuycsXG4gICAgdXBsb2FkRXJyb3I6ICfQk9GA0LXRiNC60LAg0L/RgNC4INC/0YDQuNC60LDRh9GD0LLQsNGa0LUnLFxuICAgIHByZXZpZXdGaWxlOiAn0J/RgNC40LrQsNC20Lgg0YTQsNGY0LsnLFxuICAgIGRvd25sb2FkRmlsZTogJ9Cf0YDQtdC30LXQvNC4INGE0LDRmNC7J1xuICB9LFxuICBFbXB0eToge1xuICAgIGRlc2NyaXB0aW9uOiAn0J3QtdC80LAg0L/QvtC00LDRgtC+0YbQuCdcbiAgfSxcbiAgSWNvbjoge1xuICAgIGljb246ICfQmNC60L7QvdCwJ1xuICB9LFxuICBUZXh0OiB7XG4gICAgZWRpdDogJ9Cj0YDQtdC00LgnLFxuICAgIGNvcHk6ICfQmtC+0L/QuNGA0LDRmCcsXG4gICAgY29waWVkOiAn0JrQvtC/0LjRgNCw0L3QvicsXG4gICAgZXhwYW5kOiAn0JfQs9C+0LvQtdC80LgnXG4gIH0sXG4gIFBhZ2VIZWFkZXI6IHtcbiAgICBiYWNrOiAn0J3QsNC30LDQtCdcbiAgfVxufTtcbiJdfQ==

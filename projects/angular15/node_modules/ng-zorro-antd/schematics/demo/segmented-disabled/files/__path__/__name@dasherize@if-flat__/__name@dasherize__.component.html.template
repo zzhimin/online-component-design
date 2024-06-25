@@ -1,0 +1,3 @@
+<nz-segmented [nzOptions]="['Map', 'Transit', 'Satellite']" nzDisabled></nz-segmented>
+    <br />
+    <nz-segmented [nzOptions]="options"></nz-segmented>

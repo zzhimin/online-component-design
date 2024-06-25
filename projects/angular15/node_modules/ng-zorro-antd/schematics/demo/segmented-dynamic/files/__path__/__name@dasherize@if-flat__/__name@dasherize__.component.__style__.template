@@ -1,0 +1,9 @@
+
+      .code-box-demo {
+        overflow-x: auto;
+      }
+
+      .ant-segmented {
+        margin-bottom: 10px;
+      }
+    

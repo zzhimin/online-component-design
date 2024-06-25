@@ -1,0 +1,8 @@
+/**
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://github.com/NG-ZORRO/ng-zorro-antd/blob/master/LICENSE
+ */
+export * from './tree-select.component';
+export * from './tree-select.module';
+export * from './tree-select.service';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uL2NvbXBvbmVudHMvdHJlZS1zZWxlY3QvcHVibGljLWFwaS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7O0dBR0c7QUFFSCxjQUFjLHlCQUF5QixDQUFDO0FBQ3hDLGNBQWMsc0JBQXNCLENBQUM7QUFDckMsY0FBYyx1QkFBdUIsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbIi8qKlxuICogVXNlIG9mIHRoaXMgc291cmNlIGNvZGUgaXMgZ292ZXJuZWQgYnkgYW4gTUlULXN0eWxlIGxpY2Vuc2UgdGhhdCBjYW4gYmVcbiAqIGZvdW5kIGluIHRoZSBMSUNFTlNFIGZpbGUgYXQgaHR0cHM6Ly9naXRodWIuY29tL05HLVpPUlJPL25nLXpvcnJvLWFudGQvYmxvYi9tYXN0ZXIvTElDRU5TRVxuICovXG5cbmV4cG9ydCAqIGZyb20gJy4vdHJlZS1zZWxlY3QuY29tcG9uZW50JztcbmV4cG9ydCAqIGZyb20gJy4vdHJlZS1zZWxlY3QubW9kdWxlJztcbmV4cG9ydCAqIGZyb20gJy4vdHJlZS1zZWxlY3Quc2VydmljZSc7XG4iXX0=

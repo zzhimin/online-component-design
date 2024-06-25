@@ -1,0 +1,14 @@
+/**
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://github.com/NG-ZORRO/ng-zorro-antd/blob/master/LICENSE
+ */
+export function getStatusClassNames(prefixCls, status, hasFeedback) {
+    return {
+        [`${prefixCls}-status-success`]: status === 'success',
+        [`${prefixCls}-status-warning`]: status === 'warning',
+        [`${prefixCls}-status-error`]: status === 'error',
+        [`${prefixCls}-status-validating`]: status === 'validating',
+        [`${prefixCls}-has-feedback`]: hasFeedback
+    };
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3RhdHVzLXV0aWwuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi9jb21wb25lbnRzL2NvcmUvdXRpbC9zdGF0dXMtdXRpbC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7O0dBR0c7QUFJSCxNQUFNLFVBQVUsbUJBQW1CLENBQ2pDLFNBQWlCLEVBQ2pCLE1BQXlCLEVBQ3pCLFdBQXFCO0lBRXJCLE9BQU87UUFDTCxDQUFDLEdBQUcsU0FBUyxpQkFBaUIsQ0FBQyxFQUFFLE1BQU0sS0FBSyxTQUFTO1FBQ3JELENBQUMsR0FBRyxTQUFTLGlCQUFpQixDQUFDLEVBQUUsTUFBTSxLQUFLLFNBQVM7UUFDckQsQ0FBQyxHQUFHLFNBQVMsZUFBZSxDQUFDLEVBQUUsTUFBTSxLQUFLLE9BQU87UUFDakQsQ0FBQyxHQUFHLFNBQVMsb0JBQW9CLENBQUMsRUFBRSxNQUFNLEtBQUssWUFBWTtRQUMzRCxDQUFDLEdBQUcsU0FBUyxlQUFlLENBQUMsRUFBRSxXQUFXO0tBQzNDLENBQUM7QUFDSixDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiLyoqXG4gKiBVc2Ugb2YgdGhpcyBzb3VyY2UgY29kZSBpcyBnb3Zlcm5lZCBieSBhbiBNSVQtc3R5bGUgbGljZW5zZSB0aGF0IGNhbiBiZVxuICogZm91bmQgaW4gdGhlIExJQ0VOU0UgZmlsZSBhdCBodHRwczovL2dpdGh1Yi5jb20vTkctWk9SUk8vbmctem9ycm8tYW50ZC9ibG9iL21hc3Rlci9MSUNFTlNFXG4gKi9cblxuaW1wb3J0IHsgTmdDbGFzc0ludGVyZmFjZSwgTnpWYWxpZGF0ZVN0YXR1cyB9IGZyb20gJ25nLXpvcnJvLWFudGQvY29yZS90eXBlcyc7XG5cbmV4cG9ydCBmdW5jdGlvbiBnZXRTdGF0dXNDbGFzc05hbWVzKFxuICBwcmVmaXhDbHM6IHN0cmluZyxcbiAgc3RhdHVzPzogTnpWYWxpZGF0ZVN0YXR1cyxcbiAgaGFzRmVlZGJhY2s/OiBib29sZWFuXG4pOiBOZ0NsYXNzSW50ZXJmYWNlIHtcbiAgcmV0dXJuIHtcbiAgICBbYCR7cHJlZml4Q2xzfS1zdGF0dXMtc3VjY2Vzc2BdOiBzdGF0dXMgPT09ICdzdWNjZXNzJyxcbiAgICBbYCR7cHJlZml4Q2xzfS1zdGF0dXMtd2FybmluZ2BdOiBzdGF0dXMgPT09ICd3YXJuaW5nJyxcbiAgICBbYCR7cHJlZml4Q2xzfS1zdGF0dXMtZXJyb3JgXTogc3RhdHVzID09PSAnZXJyb3InLFxuICAgIFtgJHtwcmVmaXhDbHN9LXN0YXR1cy12YWxpZGF0aW5nYF06IHN0YXR1cyA9PT0gJ3ZhbGlkYXRpbmcnLFxuICAgIFtgJHtwcmVmaXhDbHN9LWhhcy1mZWVkYmFja2BdOiBoYXNGZWVkYmFja1xuICB9O1xufVxuIl19

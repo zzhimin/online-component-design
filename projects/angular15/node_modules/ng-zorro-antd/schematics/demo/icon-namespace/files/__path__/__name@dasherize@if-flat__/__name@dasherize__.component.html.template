@@ -1,0 +1,5 @@
+
+    <div class="icons-list">
+      <span nz-icon nzType="ng-zorro:antd"></span>
+    </div>
+  

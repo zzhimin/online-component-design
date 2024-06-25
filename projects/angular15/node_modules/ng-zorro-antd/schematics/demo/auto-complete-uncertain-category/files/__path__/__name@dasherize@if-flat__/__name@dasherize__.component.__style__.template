@@ -1,0 +1,15 @@
+
+      .global-search-item {
+        display: flex;
+      }
+
+      .global-search-item-desc {
+        flex: auto;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+
+      .global-search-item-count {
+        flex: none;
+      }
+    

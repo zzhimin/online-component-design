@@ -1,0 +1,13 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: '<%= selector %>',
+  <% if(inlineTemplate) { %>template: `
+    <nz-result nzStatus="500" nzTitle="500" nzSubTitle="Sorry, there is an error on server.">
+      <div nz-result-extra>
+        <button nz-button nzType="primary">Back Home</button>
+      </div>
+    </nz-result>
+  `<% } else { %>templateUrl: './<%= dasherize(name) %>.component.html'<% } %>
+})
+export class <%= classify(name) %>Component {}

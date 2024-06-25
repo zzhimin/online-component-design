@@ -1,0 +1,52 @@
+/**
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://github.com/NG-ZORRO/ng-zorro-antd/blob/master/LICENSE
+ */
+let scrollbarVerticalSize;
+let scrollbarHorizontalSize;
+// Measure scrollbar width for padding body during modal show/hide
+const scrollbarMeasure = {
+    position: 'absolute',
+    top: '-9999px',
+    width: '50px',
+    height: '50px'
+};
+export function measureScrollbar(direction = 'vertical', prefix = 'ant') {
+    if (typeof document === 'undefined' || typeof window === 'undefined') {
+        return 0;
+    }
+    const isVertical = direction === 'vertical';
+    if (isVertical && scrollbarVerticalSize) {
+        return scrollbarVerticalSize;
+    }
+    else if (!isVertical && scrollbarHorizontalSize) {
+        return scrollbarHorizontalSize;
+    }
+    const scrollDiv = document.createElement('div');
+    Object.keys(scrollbarMeasure).forEach(scrollProp => {
+        // @ts-ignore
+        scrollDiv.style[scrollProp] = scrollbarMeasure[scrollProp];
+    });
+    // apply hide scrollbar className ahead
+    scrollDiv.className = `${prefix}-hide-scrollbar scroll-div-append-to-body`;
+    // Append related overflow style
+    if (isVertical) {
+        scrollDiv.style.overflowY = 'scroll';
+    }
+    else {
+        scrollDiv.style.overflowX = 'scroll';
+    }
+    document.body.appendChild(scrollDiv);
+    let size = 0;
+    if (isVertical) {
+        size = scrollDiv.offsetWidth - scrollDiv.clientWidth;
+        scrollbarVerticalSize = size;
+    }
+    else {
+        size = scrollDiv.offsetHeight - scrollDiv.clientHeight;
+        scrollbarHorizontalSize = size;
+    }
+    document.body.removeChild(scrollDiv);
+    return size;
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWVhc3VyZS1zY3JvbGxiYXIuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi9jb21wb25lbnRzL2NvcmUvdXRpbC9tZWFzdXJlLXNjcm9sbGJhci50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7O0dBR0c7QUFFSCxJQUFJLHFCQUE2QixDQUFDO0FBQ2xDLElBQUksdUJBQStCLENBQUM7QUFFcEMsa0VBQWtFO0FBQ2xFLE1BQU0sZ0JBQWdCLEdBQUc7SUFDdkIsUUFBUSxFQUFFLFVBQVU7SUFDcEIsR0FBRyxFQUFFLFNBQVM7SUFDZCxLQUFLLEVBQUUsTUFBTTtJQUNiLE1BQU0sRUFBRSxNQUFNO0NBQ2YsQ0FBQztBQUVGLE1BQU0sVUFBVSxnQkFBZ0IsQ0FBQyxZQUF1QyxVQUFVLEVBQUUsU0FBaUIsS0FBSztJQUN4RyxJQUFJLE9BQU8sUUFBUSxLQUFLLFdBQVcsSUFBSSxPQUFPLE1BQU0sS0FBSyxXQUFXLEVBQUU7UUFDcEUsT0FBTyxDQUFDLENBQUM7S0FDVjtJQUNELE1BQU0sVUFBVSxHQUFHLFNBQVMsS0FBSyxVQUFVLENBQUM7SUFDNUMsSUFBSSxVQUFVLElBQUkscUJBQXFCLEVBQUU7UUFDdkMsT0FBTyxxQkFBcUIsQ0FBQztLQUM5QjtTQUFNLElBQUksQ0FBQyxVQUFVLElBQUksdUJBQXVCLEVBQUU7UUFDakQsT0FBTyx1QkFBdUIsQ0FBQztLQUNoQztJQUNELE1BQU0sU0FBUyxHQUFHLFFBQVEsQ0FBQyxhQUFhLENBQUMsS0FBSyxDQUFDLENBQUM7SUFDaEQsTUFBTSxDQUFDLElBQUksQ0FBQyxnQkFBZ0IsQ0FBQyxDQUFDLE9BQU8sQ0FBQyxVQUFVLENBQUMsRUFBRTtRQUNqRCxhQUFhO1FBQ2IsU0FBUyxDQUFDLEtBQUssQ0FBQyxVQUFVLENBQUMsR0FBRyxnQkFBZ0IsQ0FBQyxVQUFVLENBQUMsQ0FBQztJQUM3RCxDQUFDLENBQUMsQ0FBQztJQUNILHVDQUF1QztJQUN2QyxTQUFTLENBQUMsU0FBUyxHQUFHLEdBQUcsTUFBTSwyQ0FBMkMsQ0FBQztJQUMzRSxnQ0FBZ0M7SUFDaEMsSUFBSSxVQUFVLEVBQUU7UUFDZCxTQUFTLENBQUMsS0FBSyxDQUFDLFNBQVMsR0FBRyxRQUFRLENBQUM7S0FDdEM7U0FBTTtRQUNMLFNBQVMsQ0FBQyxLQUFLLENBQUMsU0FBUyxHQUFHLFFBQVEsQ0FBQztLQUN0QztJQUNELFFBQVEsQ0FBQyxJQUFJLENBQUMsV0FBVyxDQUFDLFNBQVMsQ0FBQyxDQUFDO0lBQ3JDLElBQUksSUFBSSxHQUFHLENBQUMsQ0FBQztJQUNiLElBQUksVUFBVSxFQUFFO1FBQ2QsSUFBSSxHQUFHLFNBQVMsQ0FBQyxXQUFXLEdBQUcsU0FBUyxDQUFDLFdBQVcsQ0FBQztRQUNyRCxxQkFBcUIsR0FBRyxJQUFJLENBQUM7S0FDOUI7U0FBTTtRQUNMLElBQUksR0FBRyxTQUFTLENBQUMsWUFBWSxHQUFHLFNBQVMsQ0FBQyxZQUFZLENBQUM7UUFDdkQsdUJBQXVCLEdBQUcsSUFBSSxDQUFDO0tBQ2hDO0lBRUQsUUFBUSxDQUFDLElBQUksQ0FBQyxXQUFXLENBQUMsU0FBUyxDQUFDLENBQUM7SUFDckMsT0FBTyxJQUFJLENBQUM7QUFDZCxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiLyoqXG4gKiBVc2Ugb2YgdGhpcyBzb3VyY2UgY29kZSBpcyBnb3Zlcm5lZCBieSBhbiBNSVQtc3R5bGUgbGljZW5zZSB0aGF0IGNhbiBiZVxuICogZm91bmQgaW4gdGhlIExJQ0VOU0UgZmlsZSBhdCBodHRwczovL2dpdGh1Yi5jb20vTkctWk9SUk8vbmctem9ycm8tYW50ZC9ibG9iL21hc3Rlci9MSUNFTlNFXG4gKi9cblxubGV0IHNjcm9sbGJhclZlcnRpY2FsU2l6ZTogbnVtYmVyO1xubGV0IHNjcm9sbGJhckhvcml6b250YWxTaXplOiBudW1iZXI7XG5cbi8vIE1lYXN1cmUgc2Nyb2xsYmFyIHdpZHRoIGZvciBwYWRkaW5nIGJvZHkgZHVyaW5nIG1vZGFsIHNob3cvaGlkZVxuY29uc3Qgc2Nyb2xsYmFyTWVhc3VyZSA9IHtcbiAgcG9zaXRpb246ICdhYnNvbHV0ZScsXG4gIHRvcDogJy05OTk5cHgnLFxuICB3aWR0aDogJzUwcHgnLFxuICBoZWlnaHQ6ICc1MHB4J1xufTtcblxuZXhwb3J0IGZ1bmN0aW9uIG1lYXN1cmVTY3JvbGxiYXIoZGlyZWN0aW9uOiAndmVydGljYWwnIHwgJ2hvcml6b250YWwnID0gJ3ZlcnRpY2FsJywgcHJlZml4OiBzdHJpbmcgPSAnYW50Jyk6IG51bWJlciB7XG4gIGlmICh0eXBlb2YgZG9jdW1lbnQgPT09ICd1bmRlZmluZWQnIHx8IHR5cGVvZiB3aW5kb3cgPT09ICd1bmRlZmluZWQnKSB7XG4gICAgcmV0dXJuIDA7XG4gIH1cbiAgY29uc3QgaXNWZXJ0aWNhbCA9IGRpcmVjdGlvbiA9PT0gJ3ZlcnRpY2FsJztcbiAgaWYgKGlzVmVydGljYWwgJiYgc2Nyb2xsYmFyVmVydGljYWxTaXplKSB7XG4gICAgcmV0dXJuIHNjcm9sbGJhclZlcnRpY2FsU2l6ZTtcbiAgfSBlbHNlIGlmICghaXNWZXJ0aWNhbCAmJiBzY3JvbGxiYXJIb3Jpem9udGFsU2l6ZSkge1xuICAgIHJldHVybiBzY3JvbGxiYXJIb3Jpem9udGFsU2l6ZTtcbiAgfVxuICBjb25zdCBzY3JvbGxEaXYgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdkaXYnKTtcbiAgT2JqZWN0LmtleXMoc2Nyb2xsYmFyTWVhc3VyZSkuZm9yRWFjaChzY3JvbGxQcm9wID0+IHtcbiAgICAvLyBAdHMtaWdub3JlXG4gICAgc2Nyb2xsRGl2LnN0eWxlW3Njcm9sbFByb3BdID0gc2Nyb2xsYmFyTWVhc3VyZVtzY3JvbGxQcm9wXTtcbiAgfSk7XG4gIC8vIGFwcGx5IGhpZGUgc2Nyb2xsYmFyIGNsYXNzTmFtZSBhaGVhZFxuICBzY3JvbGxEaXYuY2xhc3NOYW1lID0gYCR7cHJlZml4fS1oaWRlLXNjcm9sbGJhciBzY3JvbGwtZGl2LWFwcGVuZC10by1ib2R5YDtcbiAgLy8gQXBwZW5kIHJlbGF0ZWQgb3ZlcmZsb3cgc3R5bGVcbiAgaWYgKGlzVmVydGljYWwpIHtcbiAgICBzY3JvbGxEaXYuc3R5bGUub3ZlcmZsb3dZID0gJ3Njcm9sbCc7XG4gIH0gZWxzZSB7XG4gICAgc2Nyb2xsRGl2LnN0eWxlLm92ZXJmbG93WCA9ICdzY3JvbGwnO1xuICB9XG4gIGRvY3VtZW50LmJvZHkuYXBwZW5kQ2hpbGQoc2Nyb2xsRGl2KTtcbiAgbGV0IHNpemUgPSAwO1xuICBpZiAoaXNWZXJ0aWNhbCkge1xuICAgIHNpemUgPSBzY3JvbGxEaXYub2Zmc2V0V2lkdGggLSBzY3JvbGxEaXYuY2xpZW50V2lkdGg7XG4gICAgc2Nyb2xsYmFyVmVydGljYWxTaXplID0gc2l6ZTtcbiAgfSBlbHNlIHtcbiAgICBzaXplID0gc2Nyb2xsRGl2Lm9mZnNldEhlaWdodCAtIHNjcm9sbERpdi5jbGllbnRIZWlnaHQ7XG4gICAgc2Nyb2xsYmFySG9yaXpvbnRhbFNpemUgPSBzaXplO1xuICB9XG5cbiAgZG9jdW1lbnQuYm9keS5yZW1vdmVDaGlsZChzY3JvbGxEaXYpO1xuICByZXR1cm4gc2l6ZTtcbn1cbiJdfQ==

@@ -1,0 +1,32 @@
+
+    <nz-tree-view [nzTreeControl]="treeControl" [nzDataSource]="dataSource" [trackBy]="trackBy">
+      <nz-tree-node *nzTreeNodeDef="let node" nzTreeNodeIndentLine>
+        <nz-tree-node-option
+          [nzDisabled]="node.disabled"
+          [nzSelected]="selectListSelection.isSelected(node)"
+          (nzClick)="selectListSelection.toggle(node)"
+        >
+          {{ node.name }}
+        </nz-tree-node-option>
+        <button nz-button nzType="text" nzSize="small" (click)="delete(node)">
+          <span nz-icon nzType="minus" nzTheme="outline"></span>
+        </button>
+      </nz-tree-node>
+
+      <nz-tree-node *nzTreeNodeDef="let node; when: hasNoContent" nzTreeNodeIndentLine>
+        <input nz-input placeholder="Input node name" nzSize="small" #inputElement />
+        &nbsp;
+        <button nz-button nzSize="small" (click)="saveNode(node, inputElement.value)">Add</button>
+      </nz-tree-node>
+
+      <nz-tree-node *nzTreeNodeDef="let node; when: hasChild" nzTreeNodeIndentLine>
+        <nz-tree-node-toggle>
+          <span nz-icon nzType="caret-down" nzTreeNodeToggleRotateIcon></span>
+        </nz-tree-node-toggle>
+        {{ node.name }}
+        <button nz-button nzType="text" nzSize="small" (click)="addNewNode(node)">
+          <span nz-icon nzType="plus" nzTheme="outline"></span>
+        </button>
+      </nz-tree-node>
+    </nz-tree-view>
+  

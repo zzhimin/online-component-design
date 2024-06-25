@@ -1,0 +1,4 @@
+
+    <nz-cascader [nzOptions]="nzOptions" nzStatus="error"></nz-cascader>
+    <nz-cascader [nzOptions]="nzOptions" nzStatus="warning"></nz-cascader>
+  

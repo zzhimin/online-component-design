@@ -1,0 +1,7 @@
+
+    <div class="icons-list">
+      <span nz-icon [nzType]="'smile'" [nzTheme]="'twotone'"></span>
+      <span nz-icon [nzType]="'heart'" [nzTheme]="'twotone'" [nzTwotoneColor]="'#eb2f96'"></span>
+      <span nz-icon [nzType]="'check-circle'" [nzTheme]="'twotone'" [nzTwotoneColor]="'#52c41a'"></span>
+    </div>
+  

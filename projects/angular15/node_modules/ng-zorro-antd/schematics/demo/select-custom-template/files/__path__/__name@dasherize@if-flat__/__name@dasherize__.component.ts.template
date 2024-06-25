@@ -1,0 +1,35 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: '<%= selector %>',
+  <% if(inlineTemplate) { %>template: `
+    <nz-select nzAllowClear nzPlaceHolder="Select OS" [nzCustomTemplate]="defaultTemplate">
+      <nz-option nzLabel="Windows" nzValue="windows"></nz-option>
+      <nz-option nzLabel="Apple" nzValue="apple"></nz-option>
+      <nz-option nzLabel="Android" nzValue="android"></nz-option>
+    </nz-select>
+    <ng-template #defaultTemplate let-selected>
+      <span nz-icon [nzType]="selected.nzValue"></span>
+      {{ selected.nzLabel }}
+    </ng-template>
+    <br />
+    <br />
+    <nz-select nzAllowClear nzPlaceHolder="Select OS" nzMode="multiple" [nzCustomTemplate]="multipleTemplate">
+      <nz-option nzLabel="Windows" nzValue="windows"></nz-option>
+      <nz-option nzLabel="Apple" nzValue="apple"></nz-option>
+      <nz-option nzLabel="Android" nzValue="android"></nz-option>
+    </nz-select>
+    <ng-template #multipleTemplate let-selected>
+      <div class="ant-select-selection-item-content">
+        <span nz-icon [nzType]="selected.nzValue"></span>
+        {{ selected.nzLabel }}
+      </div>
+    </ng-template>
+  `<% } else { %>templateUrl: './<%= dasherize(name) %>.component.html'<% } %>,
+  <% if(inlineStyle) { %>styles: [`
+      nz-select {
+        width: 100%;
+      }
+    `]<% } else { %>styleUrls: ['./<%= dasherize(name) %>.component.<%= style %>']<% } %>
+})
+export class <%= classify(name) %>Component {}
