@@ -7,6 +7,8 @@
 /bazel-out
 .angular/
 /project/angular15/.angular
+/project/angular15/node_modules
+/project/vue3/node_modules
 
 # Node
 /node_modules
