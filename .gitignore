@@ -6,9 +6,9 @@
 /out-tsc
 /bazel-out
 .angular/
-/project/angular15/.angular
-/project/angular15/node_modules
-/project/vue3/node_modules
+/projects/angular15/.angular
+/projects/angular15/node_modules
+/projects/vue3/node_modules
 
 # Node
 /node_modules
