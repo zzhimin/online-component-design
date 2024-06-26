@@ -1,9 +1,0 @@
-/**
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://github.com/NG-ZORRO/ng-zorro-antd/blob/master/LICENSE
- */
-export * from './typings';
-export * from './code-editor.component';
-export * from './code-editor.module';
-export * from './code-editor.service';
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uL2NvbXBvbmVudHMvY29kZS1lZGl0b3IvcHVibGljLWFwaS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7O0dBR0c7QUFFSCxjQUFjLFdBQVcsQ0FBQztBQUMxQixjQUFjLHlCQUF5QixDQUFDO0FBQ3hDLGNBQWMsc0JBQXNCLENBQUM7QUFDckMsY0FBYyx1QkFBdUIsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbIi8qKlxuICogVXNlIG9mIHRoaXMgc291cmNlIGNvZGUgaXMgZ292ZXJuZWQgYnkgYW4gTUlULXN0eWxlIGxpY2Vuc2UgdGhhdCBjYW4gYmVcbiAqIGZvdW5kIGluIHRoZSBMSUNFTlNFIGZpbGUgYXQgaHR0cHM6Ly9naXRodWIuY29tL05HLVpPUlJPL25nLXpvcnJvLWFudGQvYmxvYi9tYXN0ZXIvTElDRU5TRVxuICovXG5cbmV4cG9ydCAqIGZyb20gJy4vdHlwaW5ncyc7XG5leHBvcnQgKiBmcm9tICcuL2NvZGUtZWRpdG9yLmNvbXBvbmVudCc7XG5leHBvcnQgKiBmcm9tICcuL2NvZGUtZWRpdG9yLm1vZHVsZSc7XG5leHBvcnQgKiBmcm9tICcuL2NvZGUtZWRpdG9yLnNlcnZpY2UnO1xuIl19

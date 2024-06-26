@@ -1,9 +1,0 @@
-/**
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://github.com/NG-ZORRO/ng-zorro-antd/blob/master/LICENSE
- */
-export * from './breadcrumb-item.component';
-export * from './breadcrumb.component';
-export * from './breadcrumb.module';
-export * from './breadcrumb-separator.component';
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uL2NvbXBvbmVudHMvYnJlYWRjcnVtYi9wdWJsaWMtYXBpLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOzs7R0FHRztBQUVILGNBQWMsNkJBQTZCLENBQUM7QUFDNUMsY0FBYyx3QkFBd0IsQ0FBQztBQUN2QyxjQUFjLHFCQUFxQixDQUFDO0FBQ3BDLGNBQWMsa0NBQWtDLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyIvKipcbiAqIFVzZSBvZiB0aGlzIHNvdXJjZSBjb2RlIGlzIGdvdmVybmVkIGJ5IGFuIE1JVC1zdHlsZSBsaWNlbnNlIHRoYXQgY2FuIGJlXG4gKiBmb3VuZCBpbiB0aGUgTElDRU5TRSBmaWxlIGF0IGh0dHBzOi8vZ2l0aHViLmNvbS9ORy1aT1JSTy9uZy16b3Jyby1hbnRkL2Jsb2IvbWFzdGVyL0xJQ0VOU0VcbiAqL1xuXG5leHBvcnQgKiBmcm9tICcuL2JyZWFkY3J1bWItaXRlbS5jb21wb25lbnQnO1xuZXhwb3J0ICogZnJvbSAnLi9icmVhZGNydW1iLmNvbXBvbmVudCc7XG5leHBvcnQgKiBmcm9tICcuL2JyZWFkY3J1bWIubW9kdWxlJztcbmV4cG9ydCAqIGZyb20gJy4vYnJlYWRjcnVtYi1zZXBhcmF0b3IuY29tcG9uZW50JztcbiJdfQ==

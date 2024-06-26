@@ -1,5 +1,0 @@
-
-    <nz-tabset [nzCanDeactivate]="canDeactivate">
-      <nz-tab *ngFor="let tab of tabs" [nzTitle]="'Tab' + tab">Content of tab {{ tab }}</nz-tab>
-    </nz-tabset>
-  

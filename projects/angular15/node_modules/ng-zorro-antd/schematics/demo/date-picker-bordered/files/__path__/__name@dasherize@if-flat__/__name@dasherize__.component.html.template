@@ -1,6 +1,0 @@
-
-    <nz-date-picker nzBorderless></nz-date-picker>
-    <br />
-    <nz-range-picker nzBorderless></nz-range-picker>
-    <br />
-  
