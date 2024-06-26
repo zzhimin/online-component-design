@@ -6,6 +6,11 @@
     "dev-angular": "pnpm run -C projects/angular15 start",
     "dev-vue3": "pnpm run -C projects/vue3 dev"
   },
+  "dependencies": {
+    "ace-builds": "^1.34.2",
+    "lodash": "^4.17.21",
+    "moment": "^2.30.1"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC"
