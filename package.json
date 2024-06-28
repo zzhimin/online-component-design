@@ -9,7 +9,8 @@
   "dependencies": {
     "ace-builds": "^1.34.2",
     "lodash": "^4.17.21",
-    "moment": "^2.30.1"
+    "moment": "^2.30.1",
+    "split.js": "^1.6.5"
   },
   "keywords": [],
   "author": "",

@@ -17,6 +17,9 @@ importers:
       moment:
         specifier: ^2.30.1
         version: 2.30.1
+      split.js:
+        specifier: ^1.6.5
+        version: 1.6.5
 
   projects/angular15:
     dependencies:
@@ -3983,6 +3986,9 @@ packages:
   speakingurl@14.0.1:
     resolution: {integrity: sha512-1POYv7uv2gXoyGFpBCmpDVSNV74IfsWlDW216UPjbWufNf+bSU6GdbDsxdcxtfwb4xlI3yxzOTKClUosxARYrQ==}
     engines: {node: '>=0.10.0'}
+
+  split.js@1.6.5:
+    resolution: {integrity: sha512-mPTnGCiS/RiuTNsVhCm9De9cCAUsrNFFviRbADdKiiV+Kk8HKp/0fWu7Kr8pi3/yBmsqLFHuXGT9UUZ+CNLwFw==}
 
   sprintf-js@1.0.3:
     resolution: {integrity: sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==}
@@ -8980,6 +8986,8 @@ snapshots:
       - supports-color
 
   speakingurl@14.0.1: {}
+
+  split.js@1.6.5: {}
 
   sprintf-js@1.0.3: {}
 
