@@ -20,6 +20,9 @@ ace.config.setModuleUrl("ace/mode/javascript", modeJavascriptUrl);
  
 import modeHtmlUrl from "ace-builds/src-noconflict/mode-html?url";
 ace.config.setModuleUrl("ace/mode/html", modeHtmlUrl);
+
+import modeCssUrl from "ace-builds/src-noconflict/mode-css?url";
+ace.config.setModuleUrl("ace/mode/css", modeCssUrl);
  
 import modePythonUrl from "ace-builds/src-noconflict/mode-python?url";
 ace.config.setModuleUrl("ace/mode/yaml", modePythonUrl);
@@ -36,6 +39,9 @@ ace.config.setModuleUrl("ace/mode/javascript_worker", workerJavascriptUrl);
  
 import workerHtmlUrl from "ace-builds/src-noconflict/worker-html?url";
 ace.config.setModuleUrl("ace/mode/html_worker", workerHtmlUrl);
+
+import workerCssUrl from "ace-builds/src-noconflict/worker-css?url";
+ace.config.setModuleUrl("ace/mode/css_worker", workerCssUrl);
  
 // 导入不同语言的代码片段，提供代码自动补全和代码块功能
 import snippetsJsonUrl from "ace-builds/src-noconflict/snippets/json?url";
@@ -46,6 +52,9 @@ ace.config.setModuleUrl("ace/snippets/javascript", snippetsJsUrl);
  
 import snippetsHtmlUrl from "ace-builds/src-noconflict/snippets/html?url";
 ace.config.setModuleUrl("ace/snippets/html", snippetsHtmlUrl);
+
+import snippetsCssUrl from "ace-builds/src-noconflict/snippets/css?url";
+ace.config.setModuleUrl("ace/snippets/css", snippetsCssUrl);
  
 import snippetsPyhontUrl from "ace-builds/src-noconflict/snippets/python?url";
 ace.config.setModuleUrl("ace/snippets/javascript", snippetsPyhontUrl);

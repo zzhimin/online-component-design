@@ -1,90 +1,80 @@
 <script setup>
-import { watch, ref } from 'vue';
-import Split from 'split.js'
-import { onMounted } from 'vue';
+import { reactive, provide, ref, shallowReactive } from 'vue';
+import useSplit from '@/use/useSplit'
+import useWidgetInfo from '@/use/useWidgetInfo'
+import DyamicComponent from '@/components/DyamicComponent'
+import ctx from '@/utils/widgetCtx'
+import useDynamicComponent from '@/use/useDynamicComponent'
 
-const htmlValue = ref('')
+const {
+  topPanelRef,
+  bottomPanelRef,
+  topLeftPanelRef,
+  topRightPanelRef,
+  bottomLeftPanelRef,
+  bottomRightPanelRef,
+} = useSplit();
 
-const open = ref(false)
+const widgetState = useWidgetInfo();
 
-onMounted(() => {
-  initSplitLayout()
-})
+const activeKey1 = ref('2')
+const activeKey2 = ref('1')
 
-const topPanelRef = ref(null)
-const bottomPanelRef = ref(null)
-const topLeftPanelRef = ref(null)
-const topRightPanelRef = ref(null)
-const bottomLeftPanelRef = ref(null)
-const bottomRightPanelRef = ref(null)
-function initSplitLayout() {
-  Split([topPanelRef.value, bottomPanelRef.value], {
-    sizes: [35, 65],
-    gutterSize: 8,
-    cursor: 'row-resize',
-    direction: 'vertical'
-  });
 
-  Split([topLeftPanelRef.value, topRightPanelRef.value], {
-    sizes: [50, 50],
-    gutterSize: 8,
-    cursor: 'col-resize'
-  });
-  Split([bottomLeftPanelRef.value, bottomRightPanelRef.value], {
-    sizes: [50, 50],
-    gutterSize: 8,
-    cursor: 'col-resize'
-  });
-}
+const { dynamicRenderFunc, compProps } = useDynamicComponent(widgetState);
 
-watch(htmlValue, (newVal, oldVal) => {
-  console.log('newVal >>:', newVal);
-})
+provide('ctx', ctx)
 </script>
 
 <template>
   <a-layout>
     <a-layout-header class="header">
       <a-space>
-        <a-button type="primary">保存</a-button>
-        <a-button @click="open = true">组件列表</a-button>
+        <a-button type="primary">ctrl + s 渲染</a-button>
       </a-space>
     </a-layout-header>
     <a-layout-content class="content">
       <div class="absolute-fill">
         <div ref="topPanelRef" class="split">
           <div class="panel-content" ref="topLeftPanelRef">
-            <!-- <CodeEditor class="" mode="html" v-model:value="htmlValue"></CodeEditor> -->
+            <a-tabs v-model:activeKey="activeKey1" centered>
+              <a-tab-pane key="1" tab="资源">
+                <div>资源</div>
+              </a-tab-pane>
+              <a-tab-pane key="2" tab="HTML" force-render>
+                <CodeEditor mode="html" v-model:value="widgetState.htmlValue"></CodeEditor>
+              </a-tab-pane>
+            </a-tabs>
           </div>
           <div class="panel-content" ref="topRightPanelRef">
-
+            <a-tabs v-model:activeKey="activeKey2" centered>
+              <a-tab-pane key="1" tab="CSS">
+                <CodeEditor mode="css" v-model:value="widgetState.cssValue"></CodeEditor>
+              </a-tab-pane>
+              <a-tab-pane key="2" tab="组件设置" force-render>
+                <CodeEditor mode="json" v-model:value="widgetState.settingsValue"></CodeEditor>
+              </a-tab-pane>
+            </a-tabs>
           </div>
         </div>
         <div ref="bottomPanelRef" class="split">
           <div class="panel-content" ref="bottomLeftPanelRef">
-            <!-- <CodeEditor mode="javascript" v-model:value="htmlValue"></CodeEditor> -->
+            <CodeEditor mode="javascript" v-model:value="widgetState.javaScriptValue"></CodeEditor>
           </div>
           <div class="panel-content" ref="bottomRightPanelRef">
-
+            <DyamicComponent :renderFunc="dynamicRenderFunc" :widgetDescriptor="compProps"></DyamicComponent>
           </div>
         </div>
       </div>
     </a-layout-content>
   </a-layout>
-
-  <a-drawer title="组件列表" placement="top" :open="open" @close="open = false">
-
-    <p>Some contents...</p>
-    <p>Some contents...</p>
-    <p>Some contents...</p>
-  </a-drawer>
 </template>
 
 <style scoped lang="less">
 .header {
   display: flex;
   width: 100%;
-  background-color: #7dbcea;
+  background-color: #001529;
   align-items: center;
   justify-content: flex-end;
 }
@@ -104,4 +94,15 @@ watch(htmlValue, (newVal, oldVal) => {
 .split {
   display: flex;
   flex-direction: row;
-}</style>
+}
+
+::v-deep {
+  .ant-tabs {
+    height: 100%;
+  }
+
+  .ant-tabs-content {
+    height: 100%;
+  }
+}
+</style>

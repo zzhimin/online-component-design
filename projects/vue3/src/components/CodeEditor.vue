@@ -5,6 +5,8 @@ import '@/utils/aceConfig';
 
 const emit = defineEmits(['update:value'])
 
+const isFullscreen = ref(false)
+
 const props = defineProps({
   content: {
     type: String,
@@ -58,15 +60,47 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="code-edit-wraper">
-    <div ref="codeEditRef" style="width: 100%;height: 100%;min-width: 500px;min-height: 500px;border: 1px solid #D7D2CC;">
-    </div>
+  <div class="code-edit-wraper" v-fullscreen="isFullscreen">
+    <label class="label-wraper">
+      <span class="mode">{{ props.mode }}</span>
+      <span @click="isFullscreen = !isFullscreen" class="fullscreen">
+        <img :src="`../../public/${isFullscreen ? 'exitfullscreen' : 'fullscreen'}.png`">
+      </span>
+    </label>
+    <div ref="codeEditRef" style="height: 100%;width: 100%;"></div>
   </div>
 </template>
 
-<style scoped>
-:host {
-  display: block;
+<style scoped lang="less">
+.code-edit-wraper {
+  position: relative;
   height: 100%;
+  width: 100%;
+  .label-wraper {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    .mode {
+      background-color: #f3f3f3;
+      padding: 2px 5px;
+      border-radius: 3px;
+      color: #47acc4;
+      margin-right: 5px;
+    }
+    .fullscreen{
+      width: 25px;
+      height: 25px;
+      background-color: #f3f3f3;
+      border-radius: 50%;
+      cursor: pointer;
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
 }
 </style>

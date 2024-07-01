@@ -6,7 +6,11 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 
+import fullscreen from './directives/fullscreen'
+
 const app = createApp(App)
+
+app.directive('fullscreen', fullscreen);
 
 app.use(createPinia())
 app.use(router)
