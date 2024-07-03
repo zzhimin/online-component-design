@@ -1,4 +1,4 @@
-import { defineComponent, h } from 'vue';
+import { defineComponent, h, watch } from 'vue';
 
 const DyamicComponent = defineComponent({
   props: {
@@ -11,10 +11,16 @@ const DyamicComponent = defineComponent({
       default(rawProps) {
         return {}
       }
+    },
+    comp: {
+      type: Object
     }
   },
   setup(props) {
-    return () => props.renderFunc(h, props.widgetDescriptor);
+    // watch(() => props.comp, () => {
+    //   console.log('112 >>:', 112);
+    // })
+    return () => props.renderFunc(h, props.widgetDescriptor)
   }
 });
 

@@ -1,15 +1,18 @@
-import { ref, unref, computed, onMounted, onUnmounted, inject, shallowReactive  } from "vue";
+import { ref, unref, computed, onMounted, defineComponent, inject, shallowReactive  } from "vue";
 import useKeyDown from '@/use/useKeyDown'
+// import testSFC from "./test";
 
 export default function useDynamicComponent(widgetState) {
+  const ctx = inject('ctx')
 
   const compProps = shallowReactive({
     widgetDescriptor: {
       template: `Math.random()`
-    }
+    },
+    comp: {}
   })
   const dynamicRenderFunc = (h, props) => {
-    return h(props.widgetDescriptor);
+    return h(props.comp);
   }
 
   const widgetDescriptor = computed(() => {
@@ -32,22 +35,19 @@ export default function useDynamicComponent(widgetState) {
       resourceValue
     } = widgetDescriptor.value;
 
-    // console.log('htmlValue >>:', htmlValue);
-    // console.log('cssValue >>:', cssValue);
-    // console.log('javaScriptValue >>:', javaScriptValue);
-    // console.log(' settingsValue>>:', settingsValue);
-
-    return {
-      template: htmlValue
-    }
+    return defineComponent({
+      template: htmlValue,
+    })
   }
 
-  useKeyDown('ctrl+s', () => {
+  useKeyDown('ctrl+s',async () => {
+    // compProps.comp = await testSFC(widgetDescriptor)
     compProps.widgetDescriptor = createComponent();
   })
 
   return {
     dynamicRenderFunc,
-    compProps
+    compProps,
+    
   }
 }

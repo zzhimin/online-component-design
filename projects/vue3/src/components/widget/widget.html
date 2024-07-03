@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>widget-edit-preview</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script type="importmap">
+      {
+        "imports": {
+          "vue": "https://unpkg.com/vue@3.4.31/dist/vue.esm-browser.js"
+        }
+      }
+    </script>
+  <script type="module">
+    import { createApp } from 'vue';
+
+    function getBlobURL(module) {
+      const jsCode = module.innerHTML;
+      const blob = new Blob([jsCode], { type: 'text/javascript' });
+      const blobURL = URL.createObjectURL(blob);
+      return blobURL;
+    }
+
+    window.inlineImport = async (moduleID) => {
+      let blobURL = null;
+      const module = document.querySelector(`script[type="inline-module"]${moduleID}`);
+      if (module) {
+        blobURL = getBlobURL(module);
+      }
+      if (blobURL) {
+        const result = await import(blobURL);
+        return result;
+      }
+      return null;
+    };
+
+    const oldElements = [];
+    let instance = null;
+
+    function setStyles(styles, id) {
+
+      const cssCode = styles.join('\n');
+      const el = document.createElement('style');
+      el.id = `style-${id}`;
+      el.innerHTML = `${cssCode}`;
+      document.head.appendChild(el);
+      oldElements.push(el);
+    }
+
+    // 处理需要执行的代码
+    async function handleEval(code, styles, id) {
+      // 移除历史脚本
+      if (oldElements.length) {
+        oldElements.forEach(el => el.remove());
+      }
+
+      setStyles(styles, id)
+
+      // 创建新的脚本元素
+      const script = document.createElement("script");
+      script.setAttribute("type", "inline-module");
+      script.id = `script-content-${id}`;
+      script.innerHTML = code;
+      oldElements.push(script);
+
+      // 获取另外一个标签的默认导出的内容 https://github.com/xitu/inline-module
+      const inlineModule = document.getElementById(`inline-module-${id}`);
+      if (!inlineModule) {
+        const script2 = document.createElement("script");
+        script2.id = `inline-module-${id}`
+        script2.src = '/inline-module.js';
+        document.body.appendChild(script2);
+        document.body.insertBefore(script, script2);
+      } else {
+        document.body.insertBefore(script, inlineModule);
+      }
+
+      window.inlineImport(`#script-content-${id}`).then(m => {
+        const app = createApp(m.default)
+        if (instance) {
+          instance.unmount()
+          instance = null;
+        }
+        instance = app;
+        app.mount('#app');
+      });
+    }
+
+    window.addEventListener("message", ({ data }) => {
+      const { scriptContent, styles, id } = data;
+
+      handleEval(scriptContent, styles, id);
+    });
+
+  </script>
+</body>
+
+</html>

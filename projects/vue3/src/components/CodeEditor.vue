@@ -8,7 +8,7 @@ const emit = defineEmits(['update:value'])
 const isFullscreen = ref(false)
 
 const props = defineProps({
-  content: {
+  value: {
     type: String,
     required: false,
     default: ''
@@ -44,7 +44,7 @@ function createEditor() {
 
   editor = ace.edit(editorElement, editorOptions);
   editor.session.setUseWrapMode(true);
-  if (props.content) editor.setValue(props.content, -1);
+  if (props.value) editor.setValue(props.value, -1);
 
   editor.on("change", () => {
     if (emit) {
@@ -64,7 +64,7 @@ onMounted(() => {
     <label class="label-wraper">
       <span class="mode">{{ props.mode }}</span>
       <span @click="isFullscreen = !isFullscreen" class="fullscreen">
-        <img :src="`../../public/${isFullscreen ? 'exitfullscreen' : 'fullscreen'}.png`">
+        <img :src="`/${isFullscreen ? 'exitfullscreen' : 'fullscreen'}.png`">
       </span>
     </label>
     <div ref="codeEditRef" style="height: 100%;width: 100%;"></div>

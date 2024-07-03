@@ -1,10 +1,15 @@
 <script setup>
-import { reactive, provide, ref, shallowReactive } from 'vue';
+import { provide, ref } from 'vue';
 import useSplit from '@/use/useSplit'
 import useWidgetInfo from '@/use/useWidgetInfo'
-import DyamicComponent from '@/components/DyamicComponent'
 import ctx from '@/utils/widgetCtx'
-import useDynamicComponent from '@/use/useDynamicComponent'
+import Widget from '@/components/widget/Widget.vue'
+
+const widgetContainerRef = ref(null)
+provide('ctx', {
+  ...ctx,
+  $container: widgetContainerRef.value,
+})
 
 const {
   topPanelRef,
@@ -20,10 +25,6 @@ const widgetState = useWidgetInfo();
 const activeKey1 = ref('2')
 const activeKey2 = ref('1')
 
-
-const { dynamicRenderFunc, compProps } = useDynamicComponent(widgetState);
-
-provide('ctx', ctx)
 </script>
 
 <template>
@@ -39,7 +40,7 @@ provide('ctx', ctx)
           <div class="panel-content" ref="topLeftPanelRef">
             <a-tabs v-model:activeKey="activeKey1" centered>
               <a-tab-pane key="1" tab="资源">
-                <div>资源</div>
+                <div>待开发</div>
               </a-tab-pane>
               <a-tab-pane key="2" tab="HTML" force-render>
                 <CodeEditor mode="html" v-model:value="widgetState.htmlValue"></CodeEditor>
@@ -62,7 +63,9 @@ provide('ctx', ctx)
             <CodeEditor mode="javascript" v-model:value="widgetState.javaScriptValue"></CodeEditor>
           </div>
           <div class="panel-content" ref="bottomRightPanelRef">
-            <DyamicComponent :renderFunc="dynamicRenderFunc" :widgetDescriptor="compProps"></DyamicComponent>
+            <div class="widget-container" ref="widgetContainerRef">
+              <Widget :widgetDescriptor="widgetState"></Widget>
+            </div>
           </div>
         </div>
       </div>
@@ -88,6 +91,10 @@ provide('ctx', ctx)
 
   .panel-content {
     border: 1px solid #c0c0c0;
+    .widget-container {
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 

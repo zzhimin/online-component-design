@@ -7,6 +7,7 @@
     "dev-vue3": "pnpm run -C projects/vue3 dev"
   },
   "dependencies": {
+    "@vue/compiler-sfc": "^3.4.31",
     "ace-builds": "^1.34.2",
     "lodash": "^4.17.21",
     "moment": "^2.30.1",
