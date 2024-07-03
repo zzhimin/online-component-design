@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, watch, onUnmounted } from 'vue';
 import * as ace from 'ace-builds';
 import '@/utils/aceConfig';
 
@@ -23,6 +23,10 @@ const props = defineProps({
 const codeEditRef = ref(null)
 
 let editor;
+
+watch(() => props.value, (newVal) => {
+  editor.setValue(newVal);
+})
 
 function createEditor() {
   const editorElement = codeEditRef.value;
@@ -56,6 +60,9 @@ function createEditor() {
 onMounted(() => {
   createEditor()
 })
+onUnmounted(() => {
+  if (editor) editor.destroy();
+})
 
 </script>
 
@@ -76,6 +83,7 @@ onMounted(() => {
   position: relative;
   height: 100%;
   width: 100%;
+
   .label-wraper {
     position: absolute;
     top: 10px;
@@ -83,6 +91,7 @@ onMounted(() => {
     z-index: 10;
     display: flex;
     align-items: center;
+
     .mode {
       background-color: #f3f3f3;
       padding: 2px 5px;
@@ -90,17 +99,18 @@ onMounted(() => {
       color: #47acc4;
       margin-right: 5px;
     }
-    .fullscreen{
+
+    .fullscreen {
       width: 25px;
       height: 25px;
       background-color: #f3f3f3;
       border-radius: 50%;
       cursor: pointer;
+
       img {
         height: 100%;
         width: 100%;
       }
     }
   }
-}
-</style>
+}</style>

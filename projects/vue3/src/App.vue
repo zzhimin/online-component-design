@@ -20,7 +20,7 @@ const {
   bottomRightPanelRef,
 } = useSplit();
 
-const widgetState = useWidgetInfo();
+const { widgetState, remove, defaultTestData } = useWidgetInfo();
 
 const activeKey1 = ref('2')
 const activeKey2 = ref('1')
@@ -30,7 +30,10 @@ const activeKey2 = ref('1')
 <template>
   <a-layout>
     <a-layout-header class="header">
+      <div class="title">vue组件在线设计</div>
       <a-space>
+        <a-button type="primary" @click="defaultTestData">默认数据</a-button>
+        <a-button type="primary" @click="remove">清空</a-button>
         <a-button type="primary">ctrl + s 渲染</a-button>
       </a-space>
     </a-layout-header>
@@ -40,7 +43,7 @@ const activeKey2 = ref('1')
           <div class="panel-content" ref="topLeftPanelRef">
             <a-tabs v-model:activeKey="activeKey1" centered>
               <a-tab-pane key="1" tab="资源">
-                <div>待开发</div>
+                <CodeEditor mode="json" v-model:value="widgetState.resourceValue"></CodeEditor>
               </a-tab-pane>
               <a-tab-pane key="2" tab="HTML" force-render>
                 <CodeEditor mode="html" v-model:value="widgetState.htmlValue"></CodeEditor>
@@ -79,7 +82,12 @@ const activeKey2 = ref('1')
   width: 100%;
   background-color: #001529;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
+  .title {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 600;
+  }
 }
 
 .content {

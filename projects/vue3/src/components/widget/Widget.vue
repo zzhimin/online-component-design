@@ -30,7 +30,6 @@ const widgetDescriptor = computed(() => {
 
 const widgetContainerRef = ref(null)
 
-// 创建沙盒
 function createIframe() {
   const iframe = document.createElement('iframe');
   iframe.setAttribute('frameborder', '0');
@@ -45,10 +44,15 @@ function createIframe() {
   return iframe;
 }
 
+function saveWidgetDescriptor() {
+  localStorage.setItem('widgetDescriptor', JSON.stringify(widgetDescriptor.value))
+}
+
 
 let _iframe = null;
 const id = generateID();
 useKeyDown('ctrl+s', async () => {
+  saveWidgetDescriptor()
   const { scriptContent, styles } = await compilerWidgetDescriptor(widgetDescriptor, id);
   // console.log("🚀 ~ styles:", styles)
   // console.log("🚀 ~ scriptContent:", scriptContent)
