@@ -30,7 +30,7 @@ const activeKey2 = ref('1')
 <template>
   <a-layout>
     <a-layout-header class="header">
-      <div class="title">vue组件在线设计</div>
+      <div class="title">vue3组件在线设计</div>
       <a-space>
         <a-button type="primary" @click="defaultTestData">默认数据</a-button>
         <a-button type="primary" @click="remove">清空</a-button>
