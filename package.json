@@ -4,7 +4,8 @@
   "description": "在线设计组件并运行",
   "scripts": {
     "dev-angular": "pnpm run -C projects/angular15 start",
-    "dev-vue3": "pnpm run -C projects/vue3 dev"
+    "dev-vue3": "pnpm run -C projects/vue3 dev",
+    "build:dev-vue3": "pnpm run -C projects/vue3 build"
   },
   "dependencies": {
     "@vue/compiler-sfc": "^3.4.31",
