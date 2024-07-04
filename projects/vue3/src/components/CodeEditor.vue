@@ -71,7 +71,7 @@ onUnmounted(() => {
     <label class="label-wraper">
       <span class="mode">{{ props.mode }}</span>
       <span @click="isFullscreen = !isFullscreen" class="fullscreen">
-        <img :src="`/${isFullscreen ? 'exitfullscreen' : 'fullscreen'}.png`">
+        <img :src="`/online-component-design/${isFullscreen ? 'exitfullscreen' : 'fullscreen'}.png`">
       </span>
     </label>
     <div ref="codeEditRef" style="height: 100%;width: 100%;"></div>
