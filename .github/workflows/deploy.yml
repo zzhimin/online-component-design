@@ -18,10 +18,15 @@ jobs:
         with:
           node-version: "20.13.1"
 
+      - name: Install pnpm
+        run: npm install -g pnpm
+
       - name: Install Dependencies
         run: pnpm i
+
       - name: Build
         run: pnpm build:dev-vue3
+        
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
