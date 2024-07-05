@@ -1,5 +1,5 @@
 <script setup>
-import { provide, ref } from 'vue';
+import { provide, ref, onMounted } from 'vue';
 import useSplit from '@/use/useSplit'
 import useWidgetInfo from '@/use/useWidgetInfo'
 import ctx from '@/utils/widgetCtx'
@@ -20,11 +20,13 @@ const {
   bottomRightPanelRef,
 } = useSplit();
 
-const { widgetState, remove, defaultTestData } = useWidgetInfo();
+const htmlRef = ref(null)
+const cssRef = ref(null)
+const jsRef = ref(null)
+const { widgetState, remove, defaultTestData } = useWidgetInfo({htmlRef, cssRef, jsRef});
 
 const activeKey1 = ref('2')
 const activeKey2 = ref('1')
-
 </script>
 
 <template>
@@ -46,14 +48,14 @@ const activeKey2 = ref('1')
                 <CodeEditor mode="json" v-model:value="widgetState.resourceValue"></CodeEditor>
               </a-tab-pane>
               <a-tab-pane key="2" tab="HTML" force-render>
-                <CodeEditor mode="html" v-model:value="widgetState.htmlValue"></CodeEditor>
+                <CodeEditor ref="htmlRef" mode="html" v-model:value="widgetState.htmlValue"></CodeEditor>
               </a-tab-pane>
             </a-tabs>
           </div>
           <div class="panel-content" ref="topRightPanelRef">
             <a-tabs v-model:activeKey="activeKey2" centered>
               <a-tab-pane key="1" tab="CSS">
-                <CodeEditor mode="css" v-model:value="widgetState.cssValue"></CodeEditor>
+                <CodeEditor ref="cssRef" mode="css" v-model:value="widgetState.cssValue"></CodeEditor>
               </a-tab-pane>
               <a-tab-pane key="2" tab="组件设置" force-render>
                 <CodeEditor mode="json" v-model:value="widgetState.settingsValue"></CodeEditor>
@@ -63,7 +65,7 @@ const activeKey2 = ref('1')
         </div>
         <div ref="bottomPanelRef" class="split">
           <div class="panel-content" ref="bottomLeftPanelRef">
-            <CodeEditor mode="javascript" v-model:value="widgetState.javaScriptValue"></CodeEditor>
+            <CodeEditor ref="jsRef" mode="javascript" v-model:value="widgetState.javaScriptValue"></CodeEditor>
           </div>
           <div class="panel-content" ref="bottomRightPanelRef">
             <div class="widget-container" ref="widgetContainerRef">

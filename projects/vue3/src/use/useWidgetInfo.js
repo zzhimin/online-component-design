@@ -1,7 +1,7 @@
 import { ref, reactive, watch, onMounted, onUnmounted, toRefs } from "vue";
 import { message } from 'ant-design-vue';
 
-export default function useWidgetInfo() {
+export default function useWidgetInfo(editorEles) {
 
   let widgetDescriptor = {};
   const widgetDescriptorStr = localStorage.getItem('widgetDescriptor')
@@ -19,9 +19,9 @@ export default function useWidgetInfo() {
 
   function remove() {
     localStorage.removeItem('widgetDescriptor')
-    widgetState.htmlValue = '';
-    widgetState.cssValue = '';
-    widgetState.javaScriptValue = '';
+    editorEles.htmlRef.value.editor.setValue('')
+    editorEles.cssRef.value.editor.setValue('')
+    editorEles.jsRef.value.editor.setValue('')
     message.success('清除成功!');
   }
 
@@ -33,9 +33,9 @@ export default function useWidgetInfo() {
       "javaScriptValue": "import { ref, watch, computed } from 'vue'\n\nfunction handleClick() {\n    console.log(123)\n    alert(123)\n}\nconst inputVal = ref('')\nconst input2Val = ref('')\nconst computedVal = computed(() => {\n    return input2Val.value + ' 哈哈哈'\n})\nconst testvif = ref(true)\nfunction handlevif() {\n    testvif.value = !testvif.value\n}",
       "resourceValue": "[\"待开发: 引用一些第三方库\"]"
     }
-    widgetState.htmlValue = obj.htmlValue;
-    widgetState.cssValue = obj.cssValue;
-    widgetState.javaScriptValue = obj.javaScriptValue;
+    editorEles.htmlRef.value.editor.setValue(obj.htmlValue)
+    editorEles.cssRef.value.editor.setValue(obj.cssValue)
+    editorEles.jsRef.value.editor.setValue(obj.javaScriptValue)
   }
 
   return {

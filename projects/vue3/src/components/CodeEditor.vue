@@ -22,11 +22,8 @@ const props = defineProps({
 
 const codeEditRef = ref(null)
 
-let editor;
+const editor = ref(null);
 
-watch(() => props.value, (newVal) => {
-  editor.setValue(newVal);
-})
 
 function createEditor() {
   const editorElement = codeEditRef.value;
@@ -46,13 +43,13 @@ function createEditor() {
 
   editorOptions = { ...editorOptions, ...advancedOptions };
 
-  editor = ace.edit(editorElement, editorOptions);
-  editor.session.setUseWrapMode(true);
-  if (props.value) editor.setValue(props.value, -1);
+  editor.value = ace.edit(editorElement, editorOptions);
+  editor.value.session.setUseWrapMode(true);
+  if (props.value) editor.value.setValue(props.value, -1);
 
-  editor.on("change", () => {
+  editor.value.on("change", () => {
     if (emit) {
-      emit("update:value", editor.getValue());
+      emit("update:value", editor.value.getValue());
     }
   });
 }
@@ -61,9 +58,11 @@ onMounted(() => {
   createEditor()
 })
 onUnmounted(() => {
-  if (editor) editor.destroy();
+  if (editor.value) editor.value.destroy();
 })
-
+defineExpose({
+  editor,
+})
 </script>
 
 <template>
